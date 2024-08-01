@@ -1,7 +1,7 @@
 
-# ExploreEase
+# EaseExplore
 
-ExploreEase is a travel and tours website built using React.js and Tailwind CSS. This project aims to introduce front-end web development concepts such as creating interactive web applications, integrating APIs, managing state, and simulating user authentication using LocalStorage.
+EaseExplore is a travel and tours website built using React.js and Tailwind CSS. This project aims to introduce front-end web development concepts such as creating interactive web applications, integrating APIs, managing state, and simulating user authentication using LocalStorage.
 
 ## Features
 
