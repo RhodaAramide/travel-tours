@@ -1,4 +1,4 @@
-// src/pages/Packages.js
+
 import React, { useState, useEffect } from 'react';
 import { Packages } from '../api';
 import PackageCard from '../components/PackageCard';

@@ -1,4 +1,4 @@
-// src/components/PackageList.js
+
 import React from 'react';
 
 const PackageList = ({ packages, filter }) => {

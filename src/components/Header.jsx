@@ -1,4 +1,4 @@
-// src/components/Header.js
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 // import backgroundImage from '../assets/your-background-image.jpg';
