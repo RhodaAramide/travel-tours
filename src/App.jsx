@@ -8,6 +8,10 @@ import BookingConfirmationPage from './pages/BookingConfirmationPage';
 import PackagePage from './pages/PackagePage'; // Import PackagePage
 import SearchList from './components/SearchList';
 
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
+
 const App = () => {
   return (
     <Router>

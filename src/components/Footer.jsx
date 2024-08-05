@@ -6,8 +6,8 @@ import facebookIcon from '../assets/images/FacebookIcon.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white p-4 text-center ">      
-      <div className="container mx-auto mt-8">
+    <footer className="container mx-auto bg-primary text-white p-4 text-center ">      
+      <div className=" mt-8">
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-8'>
           <div>
             <h4 className='mb-8'>EaseExplore</h4>
@@ -45,20 +45,21 @@ const Footer = () => {
             </div>            
           </div>
           </div>
-        <div className='flex justify-between p-4 text-text font-bold'> 
+        <div className='flex justify-between gap-2 p-4 text-text font-bold'> 
           <div className='flex justify-between gap-2 border-rounded'>
-            <img src={twitterIcon} />
+            <img src={twitterIcon} className='' />
             <img src={instagramIcon} />
             <img src={githubIcon} />
             <img src={facebookIcon} />
           </div>          
-          <p>RhodaAramide</p>
-          <a href="#" className="hover:text-gray-300">Privacy Policy</a>
-          <a href="#" className="hover:text-gray-300">Terms of Service</a>
-          <p className="font-bold">
-            © 2024 EaseExplore. All rights reserved.
-          </p>
-                  
+          <div className='flex justify-between gap-2'>
+            <p>RhodaAramide</p>
+            <a href="#" className="hover:text-gray-300">Privacy Policy</a>
+            <a href="#" className="hover:text-gray-300">Terms of Service</a>
+            <p className="font-bold">
+              © 2024 EaseExplore. All rights reserved.
+            </p>                  
+          </div>
         </div>
       </div>
     </footer>

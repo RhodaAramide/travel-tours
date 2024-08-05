@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import PackageCard from '../components/PackageCard';
+import FeaturedPackages from './FeaturedPackages';
 ;
 
 const Destinations = ({ packages }) => {
@@ -20,11 +21,7 @@ const Destinations = ({ packages }) => {
                 View All
             </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">      
-          {packages == 1 && packages.length > 0 ? packages.map((pkg, index) => (
-            <PackageCard key={index} pkg={pkg} />           
-          )) : <p>No packages available</p>}   
-        </div>
+       <FeaturedPackages />
   </div>
   )
 }

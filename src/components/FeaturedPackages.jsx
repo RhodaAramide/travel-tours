@@ -39,9 +39,8 @@ const FeaturedPackages = () => {
       }
 
   return (
-    <div className="container mx-auto py-8 max-w-screen-lg">
-        
-      <h2 className="text-3xl font-bold mb-4">Featured Travel Packages</h2>
+    <div className="container mx-auto py-8 max-w-screen-lg">    
+      
       <div className=''>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {packages.slice(0, 4).map((pkg) => (
@@ -49,7 +48,7 @@ const FeaturedPackages = () => {
             ))}
         </div>
         {packages.length > 0 && (
-            <div className="mt-8">
+        <div className="mt-8">
           <swiper-container space-between="" slides-per-view="3" pagination="true" navigation="true" breakpoints={
             JSON.stringify({
                 

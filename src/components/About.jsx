@@ -5,7 +5,7 @@ import { faBellConcierge, faAward, faCheck } from '@fortawesome/free-solid-svg-i
 
 const About = () => {
   return (
-    <div className='container mx-auto bg-cover mb-8 text-white' style={{ backgroundImage: `url(${aboutImage})` }} >
+    <div className='container mx-auto bg-cover mb-8 text-white pl-8' style={{ backgroundImage: `url(${aboutImage})` }} >
     {/* // <div className='container mx-auto bg-green-100 mb-8' > */}
         <div className="p-8 text-center  font-bold ">        
             <h2 className="text-4xl font-bold mb-4">About Us</h2>
@@ -19,7 +19,7 @@ const About = () => {
               we are here to make your travel dreams a reality.  </p> 
             </div>                           
         </div>       
-        <div className='max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-32 p-4 text-center'>
+        <div className='max-w-screen-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-24 p-4 text-center'>
           {/* <div className=''> */}
             <div className='w-64 bg-primary rounded-lg shadow-lg p-8 m-2'>
               <FontAwesomeIcon icon={faBellConcierge}  style={{color: "#ffffff",}} className='mb-4 text-4xl' />

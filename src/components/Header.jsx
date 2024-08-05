@@ -51,9 +51,7 @@ const Header = ({ searchTerm, handleSearchChange }) => {
           Get Started
         </button>
         </div>
-        <div className='bg-white w-4 bg-center'>
-        < div className='bg-white w-4 bg-center'></div>
-        </div>
+       
       </div>
     </header>
   );

@@ -5,9 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Header from './Header';
 import Testimonials from './Testimonials';
-import FeaturedPackages from './FeaturedPackages';
 import Destinations from './Destinations';
-import SearchList from './SearchList';
 import About from './About';
 import Contact from './Contact';
 
@@ -86,8 +84,8 @@ const LandingPage = () => {
         
       />
       <section className="p-6">
-        <FeaturedPackages />
-        {/* <Destinations packages={packages}/> */}
+        
+        <Destinations />
         <About />
         {/* <SearchList packages={packages} filter={filter} /> */}
         <Testimonials />
