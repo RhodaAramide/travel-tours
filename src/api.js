@@ -31,10 +31,11 @@ export const Packages = async () => {
         checkin_date: '2024-09-14',
         locale: 'en-gb',
         units: 'metric',
-        children_ages: '5,0'
+        children_ages: '5,0',
+        // query: searchTerm
       },
     });
-    console.log(response.data.result);
+    
     return response.data.result;
   } catch (error) {
     console.error('Error details:', error.response ? error.response.data : error.message);

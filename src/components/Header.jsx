@@ -1,29 +1,44 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-// import backgroundImage from '../assets/your-background-image.jpg';
+import backgroundImage from '../assets/images/background-image.svg';
 
-const Header = ({ searchTerm, handleSearchChange, handleSearch }) => {
+const Header = ({ searchTerm, handleSearchChange }) => {
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleGetStartedClick = () => {
-    navigate('/packages'); // Navigate to PackagePage
+    navigate('/packages'); 
   };
+  
+  const handleSearch = () => {
+    navigate('/search');
+    console.log('Searching for:', searchTerm);
+  };
+    
+  
   return (
-    <header className="bg-accent bg-center text-white text-center py-16">
-      <h1 className="text-4xl font-bold mb-4">Welcome to ExploreEase</h1>
-      <p className="text-lg mb-8">Your gateway to amazing travel adventures.</p>
+    <header className="bg-cover bg-center text-white text-center py-16" style={{ backgroundImage: `url(${backgroundImage})` }} >
+      <div>
+      <h1 className="text-4xl font-bold mb-4">
+        Welcome to EaseExplore
+      </h1>
+      <p className="text-lg mb-8">
+        Your gateway to amazing travel adventures. 
+      </p>
+      <p className="text-lg mb-8">
+        Explore the world's most iconic landmarks, with us as your guide.
+      </p>
       <div className="flex justify-center mb-8">
         <input
           type="text"
           placeholder="Search for destinations..."
           value={searchTerm}
           onChange={handleSearchChange}
-          className="w-1/2 p-2 rounded-l-lg border-2 border-secondary focus:outline-none"
+          className="w-1/2 text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"
         />
-        <button 
+        <button           
           onClick={handleSearch} 
-          className="bg-secondary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-primary transition duration-300"
+          className="bg-primary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-backround transition duration-300"
         >
           Search
         </button>
@@ -31,10 +46,14 @@ const Header = ({ searchTerm, handleSearchChange, handleSearch }) => {
       <div className="flex justify-center">
         <button 
           onClick={handleGetStartedClick} 
-          className="bg-secondary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary transition duration-300"
+          className="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary transition duration-300"
         >
           Get Started
         </button>
+        </div>
+        <div className='bg-white w-4 bg-center'>
+        < div className='bg-white w-4 bg-center'></div>
+        </div>
       </div>
     </header>
   );

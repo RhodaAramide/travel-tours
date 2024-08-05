@@ -6,6 +6,7 @@ import PackageDetails from './components/PackageDetails';
 import BookingForm from './components/BookingForm';
 import BookingConfirmationPage from './pages/BookingConfirmationPage';
 import PackagePage from './pages/PackagePage'; // Import PackagePage
+import SearchList from './components/SearchList';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/booking" element={<BookingForm />} />
         <Route path="/confirmation" element={<BookingConfirmationPage />} />
         <Route path="/packages" element={<PackagePage />} /> 
+        <Route path="/search" element={<SearchList />} />
       </Routes>
     </Router>
   );

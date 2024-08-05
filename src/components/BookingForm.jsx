@@ -21,7 +21,7 @@ const BookingForm = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 text-text">
       <h2 className="text-3xl font-bold text-primary mb-4">Book Your Package</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -48,7 +48,7 @@ const BookingForm = () => {
           onChange={handleChange}
           className="w-full p-2 rounded-lg border-2 border-secondary focus:outline-none"
         />
-        <button type="submit" className="bg-secondary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary transition duration-300">Submit Booking</button>
+        <button type="submit" onClick={handleSubmit} className="bg-background text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary transition duration-300">Submit Booking</button>
       </form>
     </div>
   );

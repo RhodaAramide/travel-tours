@@ -1,0 +1,32 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import PackageCard from '../components/PackageCard';
+;
+
+const Destinations = ({ packages }) => {
+    const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleClick = () => {
+    navigate('/packages'); // Navigate to PackagePage
+  };
+  return (
+    <div className="container mx-auto">
+        <div className="flex justify-between mb-8 mt-4">
+            <h2 className="text-3xl text-primary font-bold mb-4">Explore Top Destinations</h2>
+            <button 
+                onClick={handleClick} 
+                className="bg-primary mr-8 text-white px-6 py-3 rounded-lg shadow-md hover:bg-background transition duration-300"
+                >
+                View All
+            </button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">      
+          {packages == 1 && packages.length > 0 ? packages.map((pkg, index) => (
+            <PackageCard key={index} pkg={pkg} />           
+          )) : <p>No packages available</p>}   
+        </div>
+  </div>
+  )
+}
+
+export default Destinations

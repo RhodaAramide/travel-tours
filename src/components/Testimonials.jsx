@@ -1,5 +1,6 @@
 
 import React from 'react';
+import jane from '../assets/images/picture.png';
 
 const testimonials = [
   { name: 'John Doe', comment: 'Amazing experience! Highly recommend.' },
@@ -9,13 +10,20 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+    <div className="container mx-auto h-46 p-6 rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold text-primary mb-4">What Our Clients Say</h2>
-      <ul className="space-y-4">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {testimonials.map((testimony, index) => (
-          <li key={index} className="text-gray-700">
-            <p className="font-semibold">{testimony.name}</p>
-            <p>{testimony.comment}</p>
+          <li key={index} className="text-gray-700 p-4 bg-accent">
+            <div className='flex justify-normal'>
+              <img src={jane} className='w-12 h-12 mr-4 rounded-lg' />
+              <div>
+                <p className="font-semibold">{testimony.name}</p>
+                <p>{testimony.comment}</p>
+              </div>
+              
+              
+            </div>
           </li>
         ))}
       </ul>
