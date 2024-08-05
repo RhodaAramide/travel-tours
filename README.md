@@ -73,7 +73,7 @@ Follow these instructions to set up the project locally.
    Create a `.env` file at the root of the project and add your RapidAPI key:
 
    ```env
-   REACT_APP_RAPIDAPI_KEY=your_rapidapi_key
+   VITE_RAPIDAPI_KEY=your_rapidapi_key
    ```
 
 5. **Start the development server:**
@@ -91,7 +91,7 @@ ExploreEase/
 ├── public/
 │   └── index.html
 ├── src/
-│   ├── assets/
+│   ├── assets/images/
 │   │   └── your-background-image.jpg
 │   ├── components/
 │   │   ├── BookingConfirmation.js
@@ -143,7 +143,7 @@ import axios from 'axios';
 
 // Set up the API endpoint and headers
 const API_URL = 'https://booking-com.p.rapidapi.com/v1/hotels/search';
-const API_KEY = process.env.REACT_APP_RAPIDAPI_KEY;
+const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
 
 const apiClient = axios.create({
   baseURL: API_URL,
@@ -154,21 +154,28 @@ const apiClient = axios.create({
   }
 });
 
-export const fetchTravelPackages = async (searchTerm) => {
+export const Packages = async () => {
   try {
     const response = await apiClient.get('', {
       params: {
+        checkout_date: '2024-09-15',
+        order_by: 'popularity',
+        filter_by_currency: 'AED',
+        include_adjacency: 'true',
+        children_number: '2',
+        categories_filter_ids: 'class::2,class::4,free_cancellation::1',
+        room_number: '1',
+        dest_id: '-553173',
+        dest_type: 'city',
+        adults_number: '2',
+        page_number: '0',
+        checkin_date: '2024-09-14',
         locale: 'en-gb',
-        checkin_date: '2024-08-01',
-        checkout_date: '2024-08-07',
-        room_number: 1,
-        adults_number: 1,
-        children_number: 0,
-        filter_by_currency: 'USD',
-        query: searchTerm
+        units: 'metric',
+        children_ages: '5,0',
       }
     });
-    return response.data;
+    return response.data.result;
   } catch (error) {
     console.error('Error fetching travel packages:', error);
     throw error;
@@ -215,7 +222,7 @@ export const fetchTravelPackages = async (searchTerm) => {
 
 The project is deployed and can be accessed at the following link:
 
-[ExploreEase Deployed Application](https://your-deployment-url.com)
+[ExploreEase Deployed Application](https://exploreease-fwp8.onrender.com)
 
 ## Contributing
 
