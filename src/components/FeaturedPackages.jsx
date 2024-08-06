@@ -39,29 +39,26 @@ const FeaturedPackages = () => {
       }
 
   return (
-    <div className="container mx-auto py-8 max-w-screen-lg">    
+    <div className="mx-4 mb-16 h-max">    
       
-      <div className=''>
+      <div className='mb-4'>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {packages.slice(0, 4).map((pkg) => (
             <PackageCard key={pkg.id} pkg={pkg} />
             ))}
         </div>
         {packages.length > 0 && (
-        <div className="mt-8">
+        <div className="mt-8 mb-8">
           <swiper-container space-between="" slides-per-view="3" pagination="true" navigation="true" breakpoints={
-            JSON.stringify({
-                
+            JSON.stringify({                
                 640:{
                     slidesPerView: 1,
                     spaceBetween: 20,
-                },
-    
+                },    
                 768: {
                     slidesPerView: 3,
                     spaceBetween: 40,
-                },
-    
+                },    
                 1024: {
                     slidesPerView: 4,
                     spaceBetween: 50,

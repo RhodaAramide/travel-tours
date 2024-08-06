@@ -35,7 +35,7 @@ export const Packages = async () => {
         // query: searchTerm
       },
     });
-    
+    console.log(response.data.result);
     return response.data.result;
   } catch (error) {
     console.error('Error details:', error.response ? error.response.data : error.message);

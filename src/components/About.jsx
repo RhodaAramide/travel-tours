@@ -3,9 +3,9 @@ import aboutImage from '../assets/images/1.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBellConcierge, faAward, faCheck } from '@fortawesome/free-solid-svg-icons';
 
-const About = () => {
+const About = ({aboutSection}) => {
   return (
-    <div className='container mx-auto bg-cover mb-8 text-white pl-8' style={{ backgroundImage: `url(${aboutImage})` }} >
+    <div id="about" className='container mx-auto bg-cover mb-8 text-white pl-8' style={{ backgroundImage: `url(${aboutImage})` }} ref={aboutSection} >
     {/* // <div className='container mx-auto bg-green-100 mb-8' > */}
         <div className="p-8 text-center  font-bold ">        
             <h2 className="text-4xl font-bold mb-4">About Us</h2>

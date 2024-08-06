@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
@@ -9,6 +9,14 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const aboutSection = useRef(null);
+  const scrollTo = () => {
+    window.scrollTo({
+      top: aboutSection.current.offsetTop,
+      behavior: "smooth",
+    })
+  }
 
   return (
     <nav className="bg-primary text-white py-4">
@@ -26,10 +34,10 @@ const Navbar = () => {
           <Link to="/packages" className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">
             Packages
           </Link>
-          <Link to="" className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">
+          <Link to="#about" onClick={scrollTo} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">
             About
           </Link>
-          <Link to="/packages" className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">Contact</Link>
+          <Link to="/#contact" onClick={scrollTo} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">Contact</Link>
         </div>
       </div>
     </nav>

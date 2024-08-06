@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PackageCard = ({ pkg }) => {
   return (
@@ -14,6 +15,9 @@ const PackageCard = ({ pkg }) => {
         <p className="text-blue-500 mt-2 flex gap-2">{pkg.review_score} 
           <span>{pkg.review_score_word}</span>
         </p>
+        <Link to={`/packages/${pkg.hotel_id}`} className="text-blue-500 hover:underline mt-2 block">
+          View Details
+        </Link>
       </div>
     </div>
   );
