@@ -1,18 +1,18 @@
 import axios from 'axios';
 
-const API_URL = 'https://booking-com.p.rapidapi.com/v1/hotels/search';
-const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
-const apiClient = axios.create({
+const API_URL = 'https://booking-com.p.rapidapi.com/v1/hotels/search'; //The API endpoint
+const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY; //This import the API key from .env
+const apiClient = axios.create({ //This accepts the headers
   baseURL: API_URL,
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json', 
     'X-RapidAPI-Key': API_KEY,
     'X-RapidAPI-Host': 'booking-com.p.rapidapi.com' // Ensure the host matches the API endpoint
   }
 });
-export const Packages = async () => {
+export const Packages = async () => { //This function retreives data from API using axios
   try {
-    const response = await apiClient.get('', {
+    const response = await apiClient.get('', { //The parameters
       params: {
         checkout_date: '2024-09-15',
         order_by: 'popularity',
@@ -25,10 +25,9 @@ export const Packages = async () => {
         locale: 'en-gb',
         units: 'metric'        
       },
-    });
-    // console.log(response.data.result);
-    return response.data.result;
-  } catch (error) {
+    });    
+    return response.data.result; //This returns the data format
+  } catch (error) { //This catches the necessary errors
     console.error('Error details:', error.response ? error.response.data : error.message);
     if (error.response && error.response.status === 403) {
       throw new Error('Subscription error: Please check your API subscription and try again.');

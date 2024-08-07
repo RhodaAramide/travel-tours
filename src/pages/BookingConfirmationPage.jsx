@@ -8,6 +8,7 @@ const BookingConfirmationPage = () => {
    * useState hook to manage the state of bookings.  
    */
   const [bookings, setBookings] = useState([]); 
+  const [data, setData] = useState([]);
 
   /**
    * useEffect hook that retrieves stored bookings from local storage and sets the state with the retrieved data.
@@ -18,6 +19,21 @@ const BookingConfirmationPage = () => {
     const storedBookings = JSON.parse(localStorage.getItem('bookings')) || [];
     setBookings(storedBookings);
   }, []);
+
+  
+  const handleClick = (index) => {
+    // Create a copy of the bookings array
+    const updatedBookings = [...bookings];
+  
+    // Remove the booking at the specified index
+    updatedBookings.splice(index, 1);
+  
+    // Update the state with the updated bookings array
+    setBookings(updatedBookings);
+  
+    // Save the updated bookings array in localStorage
+    localStorage.setItem('bookings', JSON.stringify(updatedBookings));
+  }
 
   return (
     <>
@@ -51,6 +67,9 @@ const BookingConfirmationPage = () => {
                 <p className="mb-4">Email: {booking.email}</p>
                 <p className=''>Checkin Date: {booking.checkInDate}</p>
                 <p className=''>Checkout Date: {booking.checkOutDate}</p>
+                <div className='flex justify-end mr-32 nb-4'>
+                <button onClick={() => handleClick(index)} className='bg-red-500 text-white hover:bg-red-300 px-6 py-3 rounded-lg shadow-md transition duration-300'>Delete</button>
+                </div>
               </div>
             </div>
           ))}
@@ -61,6 +80,7 @@ const BookingConfirmationPage = () => {
     </>
   );
 };
+
 
 export default BookingConfirmationPage;
 

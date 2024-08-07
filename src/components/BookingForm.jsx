@@ -9,11 +9,9 @@ import Footer from './Footer';
 
 
 const BookingForm = () => {
-
-  const navigate = useNavigate();
+  //This handles initialization  
   const location = useLocation();
   const { pkgId, pkgName, pkgPrice } = location.state;
-
   const [date, setDate] = useState(new Date());
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -104,15 +102,15 @@ const BookingForm = () => {
     <button type="submit" className="bg-white text-primary py-2 px-4 rounded hover:bg-background">
       Book Now
     </button>
-    {bookingStatus && <div className="mt-4">{bookingStatus}</div>}     
+    {bookingStatus && <div className="mt-4">{bookingStatus}</div>}    
   </form>
     
-    <div className="font-bold flex justify-center bg-white text-primary my-8 px-4 py-2 mx-2 hover:bg-teal-500 rounded">
-      <button><Link to="/confirmation"> My Bookings </Link> </button>
-    </div>
-    </div>
-    <Footer />
-    </>
+  <div className="font-bold flex justify-center bg-white text-primary my-8 px-4 py-2 mx-2 hover:bg-teal-500 rounded">
+    <button><Link to="/confirmation"> My Bookings </Link> </button>
+  </div>
+  </div>
+  <Footer />
+</>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import PackageCard from '../components/PackageCard';
 import FeaturedPackages from './FeaturedPackages';
 ;
 

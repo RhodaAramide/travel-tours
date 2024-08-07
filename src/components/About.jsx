@@ -41,12 +41,8 @@ const About = ({aboutSection}) => {
               <p>
               Let us be your trusted guide on a journey of exploration and discovery.
               </p>
-            </div>
-          {/* </div> */}
-        </div>
-        {/* <div>
-        <img src={aboutImage} className=' mr-4 rounded-lg' />
-        </div> */}
+            </div>        
+        </div>       
     </div>
   )
 }

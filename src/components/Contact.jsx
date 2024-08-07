@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 
-const Contact = () => {
+const Contact = ({contactSection}) => {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
 
-    const handleSubmit = () => {
+    const handleSubmit = () => { //This handles form submission
         console.log('Form submitted successfully.')
     }; 
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { //This handles change in the data inputs
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <div id='contact-form' className="container mx-auto w-1/2 p-6 m-8 text-text bg-primary">
+    <div id='contact' className="container mx-auto w-1/2 p-6 m-8 text-text bg-primary" ref={contactSection}>
       <h2 className="text-3xl font-bold text-center text-secondary mb-4">Contact Us</h2>
       <form id='contact-form' onSubmit={handleSubmit} className="space-y-4 m-8">
         <input

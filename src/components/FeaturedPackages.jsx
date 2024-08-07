@@ -23,9 +23,7 @@ const FeaturedPackages = () => {
       };
       fetchPackages();
     }, []);
-  
-      
-  
+    //These are the basic checks  
     if (loading) {
       return <div>Loading...</div>;
     }
@@ -39,16 +37,13 @@ const FeaturedPackages = () => {
       }
 
   return (
-    <div className="mx-4 mb-16 h-max">    
-      
-      <div className=' mb-4 h-full'>
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {packages.slice(0, 4).map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} />
-            ))}
-        </div> */}
+    <div className="mx-4 mb-16 h-max">       
+     
         {packages.length > 0 && (
         <div className="mt-8 mb-8 h-full">
+          {/* /**
+           * Renders a Swiper container with specified settings and breakpoints.
+           */ }
           <swiper-container space-between="" slides-per-view="3" pagination="true" navigation="true" breakpoints={
             JSON.stringify({                
                 50:{
@@ -69,6 +64,11 @@ const FeaturedPackages = () => {
                 }
             })
         }>
+            {/* /**
+             * Renders a list of packages using Swiper slider.
+             * @param {Array} packages - An array of package objects to be displayed.
+             * @returns JSX element containing Swiper slider with PackageCard components for each package.
+             */ }
             {packages.map((pkg) => (
               <swiper-slide key={pkg.id}>
                 <PackageCard pkg={pkg} />
@@ -77,11 +77,7 @@ const FeaturedPackages = () => {
           </swiper-container>
         </div>
       )}
-    </div>
-
-      </div>
-     
-        
+    </div>        
   );
 };
 

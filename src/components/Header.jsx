@@ -6,13 +6,13 @@ import backgroundImage from '../assets/images/background-image.svg';
 const Header = () => {
   const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleGetStartedClick = () => {
+  const handleGetStartedClick = () => { // A function to navigate to packages
     navigate('/packages'); 
   };
   
-  const handleSearch = () => {
+  const handleSearch = () => { // A function to navigate to packag
     navigate('/packages');
-    console.log('Searching for:', searchTerm);
+    ;
   };
     
   
@@ -36,14 +36,14 @@ const Header = () => {
         />
         <button          
           className="bg-primary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-backround transition duration-300"
-          onClick={handleSearch} 
+          onClick={handleSearch} //Calls the onClick function
         >
           Welcome
         </button>
       </div>
       <div className="flex justify-center">
         <button 
-          onClick={handleGetStartedClick} 
+          onClick={handleGetStartedClick} //Calls the onClick function
           className="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary transition duration-300"
         >
           Get Started

@@ -3,9 +3,7 @@ import React from 'react';
 import PackageCard from './PackageCard'
 
 const SearchList = ({ packages, filter }) => {  
- 
-
-  // Filter packages based on price and location
+  //This filters packages based on price and location
   const filteredPackages = packages.filter(pkg => {
     const matchesPrice = filter.price ? pkg.min_total_price <= filter.price : true;
     const matchesLocation = filter.location ? pkg.address.toLowerCase().includes(filter.location.toLowerCase()) : true;
@@ -16,7 +14,8 @@ const SearchList = ({ packages, filter }) => {
   return (
     <div>     
       <h3 className='text-primary font-bold m-8'>My Search List</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-8">     
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-8"> 
+      {/* This maps through the filtered packages to return each filtered package with their details     */}
       {filteredPackages.length > 0 ? (        
           filteredPackages.map((pkg, index) => (
             <PackageCard key={index} pkg={pkg} />            

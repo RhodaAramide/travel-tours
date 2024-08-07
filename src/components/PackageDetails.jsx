@@ -15,16 +15,15 @@ const PackageDetails = () => {
   useEffect(() => {
     const fetchPackage = async () => {
       try {        
-        const data = await Packages(hotel_id);
-        const selected = Array.isArray(data) ? data : [data.data]; 
-        // const selectedPackage=''; 
+        const data = await Packages(hotel_id); //This fetches packages by hotel_id
+        const selected = Array.isArray(data) ? data : [data.data]; //This formats the data into Array
+        //This for loop handles the hotel_id extraction for packages
         for (let i = 0; i < selected.length; i++) {      
           if(hotel_id == selected[i].hotel_id)   
             var selectedPackage = selected.find(p => p.hotel_id === selected[i].hotel_id);
             setPkg(selectedPackage);
-          }      
-          
-      } catch (error) {
+          }                
+      } catch (error) { //This catches the error in fetching packages
         setError('Error fetching package details.');
       } finally {
         setLoading(false);
@@ -33,7 +32,7 @@ const PackageDetails = () => {
     fetchPackage();
   }, [hotel_id]);
 
-      
+  //This function navigates to the booking form page
   const handleBookNow = () => {
     navigate('/booking', {
       state: {
@@ -43,15 +42,13 @@ const PackageDetails = () => {
       }
     });
   };
-
+  //This is for the basic checks
   if (loading) {
     return <div>Loading...</div>;
   }
-
   if (error) {
     return <div>{error}</div>;
   }
-
   if (!pkg) {
     return <div>Package not found.</div>;
   }
@@ -67,11 +64,11 @@ const PackageDetails = () => {
           <p className="text-text mb-4">{pkg.address}</p>
           <p className="text-primary font-semibold mt-2 flex gap-2">{pkg.country_trans}</p>
           <p className="text-primary text-xl mb-4">#{pkg.min_total_price}</p>          
-          <p className="text-primary text-xl mb-4">{pkg.unit_configuration_label}</p>
+          <p className="text-primary text-xl mb-4">{`${pkg.unit_configuration_label}`}</p>
         </div>
       <div className="flex justify-center">
         <button 
-          onClick={handleBookNow} 
+          onClick={handleBookNow} //This calls the handleBookNow function for the onClick event
           className="bg-primary text-white mb-4 px-6 py-3 rounded-lg shadow-md hover:bg-primary transition duration-300"
         >
           Book Now
