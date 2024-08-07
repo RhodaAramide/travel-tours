@@ -40,7 +40,7 @@ const PackagePage = () => {
       const data = response.data.result;
       const packagesArray = Array.isArray(data) ? data : [data];
       setPackages(packagesArray);
-      console.log('Packages:', packages);
+      
     })
     .catch(error => {
       console.error('Error fetching hotel data:', error);
