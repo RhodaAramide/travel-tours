@@ -8,7 +8,7 @@ const SearchList = ({ packages, filter }) => {
   // Filter packages based on price and location
   const filteredPackages = packages.filter(pkg => {
     const matchesPrice = filter.price ? pkg.min_total_price <= filter.price : true;
-    const matchesLocation = filter.location ? pkg.city.toLowerCase().includes(filter.location.toLowerCase()) : true;
+    const matchesLocation = filter.location ? pkg.address.toLowerCase().includes(filter.location.toLowerCase()) : true;
     return matchesPrice && matchesLocation;
   });
   

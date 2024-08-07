@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const PackageCard = ({ pkg }) => {
   
@@ -14,9 +15,11 @@ const PackageCard = ({ pkg }) => {
         <p className="text-primary font-semibold mt-2 flex gap-2">{pkg.country_trans}
           <span>#{pkg.min_total_price}</span>
           </p>
-        <p className="text-teal-600 font-semibold mt-2 flex gap-2">{pkg.review_score} 
+        <div className="text-teal-600 font-semibold mt-2 flex gap-2">
+          <FontAwesomeIcon icon={faStar} style={{color: "yellow",}} /> 
+          <p className='mr-4'>{pkg.review_score} </p>
           <span>{pkg.review_score_word}</span>
-        </p>
+        </div>
         <Link to={`/packages/${pkg.hotel_id}`} className="text-blue-500 hover:underline mt-2 block">
           View Details
         </Link>

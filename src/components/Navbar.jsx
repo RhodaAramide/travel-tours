@@ -1,6 +1,8 @@
 
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const Navbar = () => {
@@ -21,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className="bg-primary text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-3xl font-bold">EaseExplore</h1>
+        <h1 className="text-3xl font-bold"><FontAwesomeIcon icon={faPlane} rotation={270} size="sm" style={{color: "#ffffff",}} /> EaseExplore</h1>
         <div className="md:hidden">
           <button onClick={toggleMenu}>
             {isOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}

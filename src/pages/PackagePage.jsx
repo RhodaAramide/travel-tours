@@ -58,26 +58,36 @@ const PackagePage = () => {
     const { name, value } = e.target;
     setFilter((prevFilter) => ({
       ...prevFilter,
-      [name]: value,
+      [name]: value,    
+    
     }));
   };
 
   const handleSearch = (event) => {
     event.preventDefault();
-    // Perform the API request using the searchQuery
-    fetchHotelData(query);
+    fetchHotelData(filter.location); // Use the location from the filter state
   };
 
   return (
     <>
      <Navbar />
      <div className="flex justify-center my-8">
+        {/* <input
+          type="text"
+          placeholder="Search for destinations..."
+          name="price"
+          value={filter.price || ''}
+          onChange={handleFilterChange}
+          // onFilterChange={handleFilterChange}
+          className="w-1/2 text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"
+        /> */}
         <input
           type="text"
           placeholder="Search for destinations..."
-         
-          value={query}
-          onChange={handleSearchChange}
+          name="location"
+          value={filter.location || ''}
+          // onChange={handleSearchChange}
+          onChange={handleFilterChange}
           // onFilterChange={handleFilterChange}
           className="w-1/2 text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"
         />
