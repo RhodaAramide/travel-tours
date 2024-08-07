@@ -38,6 +38,7 @@ const Header = () => {
         />
         <button          
           className="bg-primary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-backround transition duration-300"
+          onClick={handleSearch} 
         >
           Search
         </button>

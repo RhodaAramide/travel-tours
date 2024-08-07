@@ -55,7 +55,7 @@ const FeaturedPackages = () => {
                     slidesPerView: 1,
                     spaceBetween: 10,
                 }, 
-                640:{
+                600:{
                   slidesPerView: 2,
                     spaceBetween: 10,
                 },   
