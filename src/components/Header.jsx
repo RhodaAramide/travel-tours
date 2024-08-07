@@ -31,16 +31,14 @@ const Header = () => {
       <div className="flex justify-center mb-8">
         <input
           type="text"
-          placeholder="Search for destinations..."
-          // value={searchTerm}
-          // onChange={handleSearchChange}
+          placeholder="Welcome..."          
           className="w-1/2 text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"
         />
         <button          
           className="bg-primary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-backround transition duration-300"
           onClick={handleSearch} 
         >
-          Search
+          Welcome
         </button>
       </div>
       <div className="flex justify-center">
