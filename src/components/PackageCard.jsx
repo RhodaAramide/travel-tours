@@ -8,7 +8,7 @@ const PackageCard = ({ pkg }) => {
   return (
     <div className="bg-white h-full shadow-lg rounded-lg overflow-hidden">
       <img src={pkg.max_photo_url} alt={pkg.hotel_name} className="w-full h-48 object-cover" />
-      <div className="p-4">
+      <div className="h-full p-4">
         <h3 className="text-lg font-bold">{pkg.hotel_name}</h3>
         <p className="text-gray-700">{pkg.address}</p>
         <p className="text-primary font-semibold mt-2 flex gap-2">{pkg.country_trans}

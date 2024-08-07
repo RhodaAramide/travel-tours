@@ -8,17 +8,18 @@ import SearchList from '../components/SearchList';
 
 const PackagePage = () => {
   const [query, setQuery] = useState('');
-  const [filter, setFilter] = useState({ price: '', location: '', type: '' });
+  const [filter, setFilter] = useState({ price: '', location: '',  });
   const [packages, setPackages] = useState([]);
   
-  const fetchHotelData = (query) => {
-    const apiKey = '0e2fca4d67mshf6023e364efee7bp1abddajsn08fd4ddf5e32';
   
+  const fetchHotelData = (query) => {
+    const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
     const url = 'https://booking-com.p.rapidapi.com/v1/hotels/search';
   
     axios.get(url, {
       headers: {
-        'Authorization': `Bearer ${apiKey}`
+        'x-rapidapi-key': apiKey,
+        'x-rapidapi-host': 'booking-com.p.rapidapi.com'
       },
       params: {
         checkout_date: '2024-09-15',
@@ -34,32 +35,35 @@ const PackagePage = () => {
         query: query
       }
     })
-      .then(response => {
-        // Handle the response data
-        // console.log(response.data.result);             
-        const data = response.data.result;
-        const packagesArray = Array.isArray(data) ? data : [data.data];
-        setPackages(packagesArray);
-        // Continue with filtering and displaying the data
-      })
-      .catch(error => {
-        console.error(error);
-      });      
+    .then(response => {
+      // Handle the response data
+      const data = response.data.result;
+      const packagesArray = Array.isArray(data) ? data : [data];
+      setPackages(packagesArray);
+      console.log('Packages:', packages);
+    })
+    .catch(error => {
+      console.error('Error fetching hotel data:', error);
+    });
   };
  
   
   const handleSearchChange = (e) => {
     setQuery(e.target.value);
+    // setFilter({ ...filter, [e.target.name]: e.target.value });
   };
 
   
   const handleFilterChange = (e) => {
-    setFilter({ ...filter, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFilter((prevFilter) => ({
+      ...prevFilter,
+      [name]: value,
+    }));
   };
 
   const handleSearch = (event) => {
     event.preventDefault();
-
     // Perform the API request using the searchQuery
     fetchHotelData(query);
   };
@@ -71,9 +75,10 @@ const PackagePage = () => {
         <input
           type="text"
           placeholder="Search for destinations..."
+         
           value={query}
           onChange={handleSearchChange}
-          // handleFilterChange={handleFilterChange}
+          // onFilterChange={handleFilterChange}
           className="w-1/2 text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"
         />
         <button           
@@ -83,8 +88,13 @@ const PackagePage = () => {
           Search
         </button>
       </div>
+      <div>
+      {query.length === 0 ?
+        <PackageList />
+      :
      <SearchList packages={packages} filter={filter} />
-      <PackageList />
+      }
+      </div>
       <Footer /> 
     </>
   );

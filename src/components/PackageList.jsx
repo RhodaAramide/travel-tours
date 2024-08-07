@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
-import { Packages } from '../api';
 import PackageCard from './PackageCard';
+import { Packages } from '../api';
 
-const PackageList = () => {
-    const [packages, setPackages] = useState([]);
+const PackageList = () => {     
+  const [packages, setPackages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
   
@@ -34,10 +33,11 @@ const PackageList = () => {
       return <div>{error}</div>;
     }
        
+
   
     return (
         <div className="container mx-auto py-8">
-          <h2 className="text-3xl font-bold mb-4">Travel Packages</h2>
+          <h2 className="text-3xl text-primary font-bold mb-4">All Travel Packages</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {packages.length > 0 ? packages.map((pkg, index) => (
               <PackageCard key={index} pkg={pkg} />           

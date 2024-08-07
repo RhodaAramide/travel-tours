@@ -21,7 +21,7 @@ const Destinations = ({ packages }) => {
                 View All
             </button>
         </div>
-       <FeaturedPackages />
+       <FeaturedPackages packages={packages}/>
   </div>
   )
 }

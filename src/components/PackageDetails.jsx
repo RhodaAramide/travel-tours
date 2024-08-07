@@ -67,7 +67,7 @@ const PackageDetails = () => {
           <p className="text-text mb-4">{pkg.address}</p>
           <p className="text-primary font-semibold mt-2 flex gap-2">{pkg.country_trans}</p>
           <p className="text-primary text-xl mb-4">#{pkg.min_total_price}</p>          
-          
+          <p className="text-primary text-xl mb-4">{pkg.unit_configuration_label}</p>
         </div>
       <div className="flex justify-center">
         <button 
