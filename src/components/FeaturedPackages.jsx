@@ -41,31 +41,31 @@ const FeaturedPackages = () => {
   return (
     <div className="mx-4 mb-16 h-max">    
       
-      <div className='mb-4'>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className=' mb-4 h-full'>
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {packages.slice(0, 4).map((pkg) => (
             <PackageCard key={pkg.id} pkg={pkg} />
             ))}
-        </div>
+        </div> */}
         {packages.length > 0 && (
-        <div className="mt-8 mb-8">
+        <div className="mt-8 mb-8 h-full">
           <swiper-container space-between="" slides-per-view="3" pagination="true" navigation="true" breakpoints={
             JSON.stringify({                
                 640:{
                     slidesPerView: 1,
-                    spaceBetween: 20,
+                    spaceBetween: 10,
                 },    
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 40,
+                    spaceBetween: 10,
                 },    
                 1024: {
                     slidesPerView: 4,
-                    spaceBetween: 50,
+                    spaceBetween: 10,
                 }
             })
         }>
-            {packages.slice(4).map((pkg) => (
+            {packages.map((pkg) => (
               <swiper-slide key={pkg.id}>
                 <PackageCard pkg={pkg} />
               </swiper-slide>

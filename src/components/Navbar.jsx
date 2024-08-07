@@ -30,14 +30,14 @@ const Navbar = () => {
         <div className={`mr-8 md:flex items-center space-x-4 ${isOpen ? 'block' : 'hidden'} md:block`}>
           <Link to="/" className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">
             Home
-          </Link>
-          <Link to="/packages" className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">
-            Packages
-          </Link>
+          </Link>          
           <Link to="#about" onClick={scrollTo} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">
             About
           </Link>
           <Link to="/#contact" onClick={scrollTo} className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">Contact</Link>
+          <Link to="/confirmation" className="block mt-4 px-4 py-2 md:inline-block md:mt-0 mx-2 hover:bg-background rounded">
+            My Bookings
+          </Link>
         </div>
       </div>
     </nav>

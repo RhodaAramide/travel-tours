@@ -20,12 +20,7 @@ const SearchList = ({ packages, filter }) => {
             <p className="text-gray-700 mb-2">{pkg.address}</p>
             <p className="text-lg font-bold text-secondary">{pkg.min_total_price}</p>
             <button className="bg-accent text-white px-4 py-2 rounded-lg mt-4 hover:bg-primary transition duration-300">Book Now</button>
-            <button 
-              onClick={() => handleFavorite(pkg.hotel_id)} 
-              className="bg-secondary text-white px-4 py-2 rounded-lg mt-2 hover:bg-primary transition duration-300"
-            >
-              {isFavorite(pkg.hotel_id) ? 'Unfavorite' : 'Favorite'}
-            </button>
+            
         </div>
       ))}
     </div>
@@ -33,21 +28,6 @@ const SearchList = ({ packages, filter }) => {
   );
 };
 
-// Function to handle favoriting a package
-const handleFavorite = (hotel_id) => {
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  if (favorites.includes(hotel_id)) {
-    favorites = favorites.filter(favId => favId !== hotel_id);
-  } else {
-    favorites.push(hotel_id);
-  }
-  localStorage.setItem('favorites', JSON.stringify(favorites));
-};
 
-// Function to check if a package is a favorite
-const isFavorite = (id) => {
-  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  return favorites.includes(id);
-};
 
 export default SearchList;

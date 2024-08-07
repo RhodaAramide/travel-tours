@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import backgroundImage from '../assets/images/background-image.svg';
 
-const Header = ({ searchTerm, handleSearchChange }) => {
+const Header = () => {
   const navigate = useNavigate(); // Initialize useNavigate
 
   const handleGetStartedClick = () => {
@@ -11,7 +11,7 @@ const Header = ({ searchTerm, handleSearchChange }) => {
   };
   
   const handleSearch = () => {
-    navigate('/search');
+    navigate('/packages');
     console.log('Searching for:', searchTerm);
   };
     
@@ -32,12 +32,11 @@ const Header = ({ searchTerm, handleSearchChange }) => {
         <input
           type="text"
           placeholder="Search for destinations..."
-          value={searchTerm}
-          onChange={handleSearchChange}
+          // value={searchTerm}
+          // onChange={handleSearchChange}
           className="w-1/2 text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"
         />
-        <button           
-          onClick={handleSearch} 
+        <button          
           className="bg-primary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-backround transition duration-300"
         >
           Search

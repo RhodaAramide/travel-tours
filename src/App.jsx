@@ -17,7 +17,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/package/:hotel_id" element={<PackageDetails />} />
+        <Route path="/packages/:hotel_id"  element={<PackageDetails />} />
         <Route path="/booking" element={<BookingForm />} />
         <Route path="/confirmation" element={<BookingConfirmationPage />} />
         <Route path="/packages" element={<PackagePage />} /> 

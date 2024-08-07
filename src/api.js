@@ -2,8 +2,6 @@ import axios from 'axios';
 
 const API_URL = 'https://booking-com.p.rapidapi.com/v1/hotels/search';
 const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY;
-
-
 const apiClient = axios.create({
   baseURL: API_URL,
   headers: {
@@ -12,7 +10,6 @@ const apiClient = axios.create({
     'X-RapidAPI-Host': 'booking-com.p.rapidapi.com' // Ensure the host matches the API endpoint
   }
 });
-
 export const Packages = async () => {
   try {
     const response = await apiClient.get('', {
@@ -20,22 +17,16 @@ export const Packages = async () => {
         checkout_date: '2024-09-15',
         order_by: 'popularity',
         filter_by_currency: 'AED',
-        include_adjacency: 'true',
-        children_number: '2',
-        categories_filter_ids: 'class::2,class::4,free_cancellation::1',
         room_number: '1',
-        dest_id: '-553173',
-        dest_type: 'city',
+        dest_id: '155',
+        dest_type: 'country',
         adults_number: '2',
-        page_number: '0',
         checkin_date: '2024-09-14',
         locale: 'en-gb',
-        units: 'metric',
-        children_ages: '5,0',
-        // query: searchTerm
+        units: 'metric'        
       },
     });
-    console.log(response.data.result);
+    // console.log(response.data.result);
     return response.data.result;
   } catch (error) {
     console.error('Error details:', error.response ? error.response.data : error.message);

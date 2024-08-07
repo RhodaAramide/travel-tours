@@ -6,8 +6,8 @@ import facebookIcon from '../assets/images/FacebookIcon.png';
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto bg-primary text-white p-4 text-center ">      
-      <div className=" mt-8">
+    <footer className="bg-primary text-white p-4 text-center ">      
+      <div className="w-full mt-8">
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-8'>
           <div>
             <h4 className='mb-8'>EaseExplore</h4>
