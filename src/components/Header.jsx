@@ -31,7 +31,7 @@ const Header = () => {
       <div className="flex justify-center mb-8">
         <input
           type="text"
-          placeholder="Welcome..."          
+          placeholder="It's great to have you..."          
           className="w-1/2 text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"
         />
         <button          
