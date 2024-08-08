@@ -5,8 +5,8 @@ EaseExplore is a travel and tours website built using React.js and Tailwind CSS.
 
 ## Features
 
-- **Search and Filter:** Users can search for travel destinations and filter results based on criteria such as price, location, and package type.
-- **Package Details:** Detailed views for each travel package with information like itinerary, inclusions, and user reviews.
+- **Search and Filter:** Users can search for travel destinations and filter results based on criteria such as price and location.
+- **Package Details:** Detailed views for each travel package with information like name, address, price and user reviews.
 - **Booking:** A form for users to book packages and save their details using client-side storage solutions such as LocalStorage.
 - **Booking Confirmation:** Display a booking confirmation page showing the details of the booked travel package.
 - **Favorite Packages:** Allow users to mark travel packages as favorites and store this information in LocalStorage.
@@ -33,8 +33,8 @@ Follow these instructions to set up the project locally.
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/ExploreEase.git
-   cd ExploreEase
+   git clone https://github.com/RhodaAramide/travel-tours.git
+   cd EaseExplore
    ```
 
 2. **Install dependencies:**
@@ -87,29 +87,33 @@ Follow these instructions to set up the project locally.
 ## Project Structure
 
 ```
-ExploreEase/
+EaseExplore/
 ├── public/
 │   └── index.html
 ├── src/
 │   ├── assets/images/
 │   │   └── your-background-image.jpg
 │   ├── components/
-│   │   ├── BookingConfirmation.js
-│   │   ├── BookingForm.js
-│   │   ├── Footer.js
-│   │   ├── Header.js
-│   │   ├── LandingPage.js
-│   │   ├── Navbar.js
-│   │   ├── PackageDetails.js
-│   │   ├── PackageList.js
-│   │   ├── Testimonials.js
+        ├── About.jsx
+        ├── Contact.jsx
+        ├── Destintions.jsx
+        ├── FeaturedPackages.jsx
+│   │   ├── PackageCard.jsx
+│   │   ├── BookingForm.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Header.jsx
+│   │   ├── LandingPage.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── PackageDetails.jsx
+│   │   ├── PackageList.jsx
+│   │   ├── Testimonials.jsx
 │   │   └── FavoritePackages.js
 │   ├── pages/
-│   │   ├── BookingPage.js
-│   │   ├── PackagePage.js
-│   │   └── SearchResultsPage.js
+│   │   ├── BookingConfirmationPage.jsx
+│   │   ├── PackagePage.jsx
+│   │   └── HomePage.jsx
 │   ├── api.js
-│   ├── App.js
+│   ├── App.jsx
 │   ├── index.css
 │   ├── main.jsx
 │   └── tailwind.config.js
@@ -123,13 +127,23 @@ ExploreEase/
 
 - **Navbar:** Navigation bar at the top of the page.
 - **Header:** Header section with a search bar and a "Get Started" button.
+- **About:** About shows detailed information about the website.
+- **Contact:** Contact section with a form and a "Submit" button to contact and drop a message.
+- **Destinations:** Header section with a search bar and a "Get Started" button.
+- **Featured Packages:** This section displays the packages in a grid format with a slider.
 - **LandingPage:** Main landing page with featured travel packages and testimonials.
-- **PackageList:** Displays a list of travel packages.
+- **PackageList:** Displays a list of travel packages and also filters and search through packages.
+- **PackageCard:** Shows detailed information for a specific travel package and it styled like a card to be use throughout.
 - **PackageDetails:** Shows detailed information for a specific travel package.
 - **BookingForm:** Form for booking a travel package.
 - **BookingConfirmation:** Displays booking confirmation details.
 - **Testimonials:** Section for user testimonials.
-- **FavoritePackages:** Allows users to mark and view favorite packages.
+- **Footer:** Footer section at the bottom of the page.
+
+## Pages
+- **BookingConfirmationPage:** This page displays booking confirmation details and a function to delete any booking. 
+- **HomePage:** Displays the Main Landing Page.
+- **PackagePage:** Displays a list of travel packages with the search and filter field.
 
 ## API Integration
 
@@ -161,19 +175,14 @@ export const Packages = async () => {
         checkout_date: '2024-09-15',
         order_by: 'popularity',
         filter_by_currency: 'AED',
-        include_adjacency: 'true',
-        children_number: '2',
-        categories_filter_ids: 'class::2,class::4,free_cancellation::1',
         room_number: '1',
-        dest_id: '-553173',
-        dest_type: 'city',
+        dest_id: '155',
+        dest_type: 'country',
         adults_number: '2',
-        page_number: '0',
         checkin_date: '2024-09-14',
         locale: 'en-gb',
-        units: 'metric',
-        children_ages: '5,0',
-      }
+        units: 'metric'        
+      },
     });
     return response.data.result;
   } catch (error) {
@@ -189,12 +198,12 @@ export const Packages = async () => {
 
 1. Enter a destination in the search bar located in the header.
 2. Click the "Search" button to display the results.
-3. Filter the search results based on criteria such as price, location, and package type.
+3. Filter the search results based on criteria such as price and location.
 
 ### Viewing Package Details
 
 1. Click on any travel package to view its detailed information.
-2. The details page will show information such as the itinerary, inclusions, pricing, and user reviews.
+2. The details page will show information such as the name, address, pricing, and user reviews.
 
 ### Booking a Package
 
@@ -207,7 +216,7 @@ export const Packages = async () => {
 1. After booking a package, you will be redirected to the booking confirmation page.
 2. The booking confirmation page will display the details of the booked travel package.
 
-### Marking Favorite Packages
+### Marking Favorite Packages(In Progress)
 
 1. On the package details page, click the "Add to Favorites" button.
 2. The package will be saved to your favorites using LocalStorage.
@@ -222,7 +231,7 @@ export const Packages = async () => {
 
 The project is deployed and can be accessed at the following link:
 
-[ExploreEase Deployed Application](https://exploreease-fwp8.onrender.com)
+[EaseExplore Deployed Application](https://exploreease-fwp8.onrender.com)
 
 ## Contributing
 
@@ -234,4 +243,5 @@ Contributions are welcome! Please fork the repository and create a pull request 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [RapidAPI](https://rapidapi.com/)
 - [Booking.com API](https://rapidapi.com/tipsters/api/booking-com/)
+- [Tourism icons created by GOWI - Flaticon](https://www.flaticon.com/free-icons/tourism)
 

@@ -16,9 +16,9 @@ const PackageList = () => {
 
   const fetchData = async () => {
     try {
-      const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
-      const url = 'https://booking-com.p.rapidapi.com/v1/hotels/search';
-    
+      const apiKey = import.meta.env.VITE_RAPIDAPI_KEY; //This imports my API key from .env file
+      const url = 'https://booking-com.p.rapidapi.com/v1/hotels/search'; //This is the API endpoint
+      //This gets the data from the API endpoint
       axios.get(url, {
         headers: {
           'x-rapidapi-key': apiKey,
@@ -41,12 +41,12 @@ const PackageList = () => {
         // Handle the response data
         response.data.result;
         const result = response.data.result;
-        const packagesArray = Array.isArray(result) ? result : [result.data]        
+        const packagesArray = Array.isArray(result) ? result : [result.data]; //Changes the data into an array
         setData(packagesArray);
         setFilteredData(packagesArray);       
         
       })      
-    } catch (error) {
+    } catch (error) { //This checks for errors
       setError('Error fetching travel packages.');
     }finally {
       setLoading(false);
@@ -54,31 +54,30 @@ const PackageList = () => {
   };
 
 
-  if (loading) {
+  if (loading) { //This is displayed while it is loading
     return <div>Loading...</div>;
   }
 
-  if (error) {
+  if (error) {  //This displays the error if encountered
     return <div>{error}</div>;
   }
 
-  // if (data.length === 0) {
-  //     return <div>No packages found.</div>;
-  //   }
-
+ 
+  //This handles location change when the location input is being updated
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
     filterData(event.target.value, price);
   };
-
+  //This handles location change when the location input is being updated
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
     filterData(location, event.target.value);
   };
+  //This handles the search and filter logic when search button is clicked
   const handleSearch = () => {
     filterData(location, price);
   };
-
+  //This filters the data by location and price
   const filterData = (location, price) => {
     const filtered = data.filter(item => {
       const matchesLocation = location ? item.address.toLowerCase().includes(location.toLowerCase()) : true;
@@ -91,19 +90,27 @@ const PackageList = () => {
   return (
     <>
     <div className='flex justify-center my-8'>
-      <div>
-        
-        <input type="text" placeholder='Location' value={location} onChange={handleLocationChange} className="text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none" />
+      <div>        
+        <input 
+        type="text" 
+        placeholder='Location' 
+        value={location} 
+        onChange={handleLocationChange} 
+        className="text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none" />
       </div>
       <div>        
-        <input type="text" placeholder='Minimum Price' value={price} onChange={handlePriceChange} className="text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"/>
+        <input 
+        type="text" 
+        placeholder='Minimum Price' 
+        value={price} onChange={handlePriceChange} 
+        className="text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"/>
       </div>
       <button onClick={handleSearch} className="bg-primary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-backround transition duration-300">
         Search
       </button>
       </div>
       <div className="mx-8 py-8">
-        <h2 className="text-3xl text-primary font-bold mb-4">All Travel Packages</h2>
+        <h2 className="text-3xl text-primary font-bold mb-4">Travel Packages</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredData.length > 0 ? 
           <div>{filteredData.map((item, index) => (
@@ -111,7 +118,7 @@ const PackageList = () => {
           ))}
           </div> : 
           <div>
-            <p>No Search found.</p>  
+            {/* <p>No Search found.</p>   */}
             {data.map((item, index) => (
             <PackageCard key={index} pkg={item} />           
           )) }
