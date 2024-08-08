@@ -11,7 +11,7 @@ const Destinations = ({ packages }) => {
   };
   return (
     <div className="container mx-auto">
-        <div className="flex justify-between mb-8 mt-4">
+        <div className="flex justify-between mb-4 mt-4">
             <h2 className="text-3xl text-primary font-bold mb-4">Explore Top Destinations</h2>
             <button 
                 onClick={handleClick} 

@@ -7,8 +7,8 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 const PackageCard = ({ pkg }) => {
   
   return (
-    <div className="bg-white my-4 shadow-lg rounded-lg overflow-hidden"> 
-      <img src={pkg.max_photo_url} alt={pkg.hotel_name} className="w-full h-48 object-cover" />
+    <div className="bg-white mx-auto my-4 h-full shadow-lg rounded-lg overflow-hidden"> 
+      <img src={pkg.max_photo_url} alt={pkg.hotel_name} className="w-full h-64 object-cover" />
       <div className="h-full p-4">
         <h3 className="text-lg font-bold">{pkg.hotel_name}</h3>
         <p className="text-gray-700">{pkg.address}</p>

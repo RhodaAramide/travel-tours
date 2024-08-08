@@ -40,11 +40,11 @@ const FeaturedPackages = () => {
     <div className="mx-4 mb-16 h-max">       
      
         {packages.length > 0 && (
-        <div className="mt-8 mb-8 h-full">
+        <div className="mt-2 mb-8 h-full">
           {/* /**
            * Renders a Swiper container with specified settings and breakpoints.
            */ }
-          <swiper-container space-between="" slides-per-view="3" pagination="true" navigation="true" breakpoints={
+          <swiper-container className="" space-between="" slides-per-view="3" pagination="true" navigation="true" breakpoints={
             JSON.stringify({                
                 50:{
                     slidesPerView: 1,

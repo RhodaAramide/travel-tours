@@ -11,9 +11,7 @@ body {
   color: #4A4A4A; /* Dark Gray text */
 }
 
-swiper-container {
-  /* width: 800px; */
-  height: 450px;
-  /* line-height: 200px;
-  text-align: center; */
+swiper-container { 
+  height: 540px;  
+  
 }
