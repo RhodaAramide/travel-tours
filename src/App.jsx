@@ -5,8 +5,8 @@ import LandingPage from './components/LandingPage';
 import PackageDetails from './components/PackageDetails';
 import BookingForm from './components/BookingForm';
 import BookingConfirmationPage from './pages/BookingConfirmationPage';
-import PackagePage from './pages/PackagePage'; // Import PackagePage
-import SearchList from './components/SearchList';
+import PackagePage from './pages/PackagePage'; 
+
 
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements
@@ -20,8 +20,7 @@ const App = () => {
         <Route path="/packages/:hotel_id"  element={<PackageDetails />} />
         <Route path="/booking" element={<BookingForm />} />
         <Route path="/confirmation" element={<BookingConfirmationPage />} />
-        <Route path="/packages" element={<PackagePage />} /> 
-        <Route path="/search" element={<SearchList />} />
+        <Route path="/packages" element={<PackagePage />} />         
       </Routes>
     </Router>
   );

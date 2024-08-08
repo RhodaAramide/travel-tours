@@ -15,7 +15,7 @@ const PackageDetails = () => {
   useEffect(() => {
     const fetchPackage = async () => {
       try {        
-        const data = await Packages(hotel_id); //This fetches packages by hotel_id
+        const data = await Packages(hotel_id); //Thi fetches packages by hotel_id
         const selected = Array.isArray(data) ? data : [data.data]; //This formats the data into Array
         //This for loop handles the hotel_id extraction for packages
         for (let i = 0; i < selected.length; i++) {      
@@ -23,7 +23,7 @@ const PackageDetails = () => {
             var selectedPackage = selected.find(p => p.hotel_id === selected[i].hotel_id);
             setPkg(selectedPackage);
           }                
-      } catch (error) { //This catches the error in fetching packages
+      } catch (error) { //This catches the error in fetching data
         setError('Error fetching package details.');
       } finally {
         setLoading(false);
@@ -42,29 +42,34 @@ const PackageDetails = () => {
       }
     });
   };
-  //This is for the basic checks
+
   if (loading) {
     return <div>Loading...</div>;
   }
+
   if (error) {
     return <div>{error}</div>;
   }
+
   if (!pkg) {
     return <div>Package not found.</div>;
   }
+  const parser = new DOMParser();
+  const parsedHTML = parser.parseFromString(pkg.unit_configuration_label, 'text/html');
+  const formattedPkg = parsedHTML.body.textContent;
 
   return (
     <>
     <Navbar />
-    <div className="container mx-auto py-8 max-w-screen-lg">
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="container mx-auto  py-8 max-w-screen-lg">
+      <div className="bg-white mx-4 shadow-lg rounded-lg overflow-hidden">
         <img src={pkg.max_photo_url} alt={pkg.hotel_name} className="w-full h-64 object-cover" />
         <div className="p-4">
           <h2 className="text-primary text-3xl font-bold mb-4">{pkg.hotel_name}</h2>
           <p className="text-text mb-4">{pkg.address}</p>
           <p className="text-primary font-semibold mt-2 flex gap-2">{pkg.country_trans}</p>
-          <p className="text-primary text-xl mb-4">#{pkg.min_total_price}</p>          
-          <p className="text-primary text-xl mb-4">{`${pkg.unit_configuration_label}`}</p>
+          <p className="text-primary text-xl mb-4">#{parseFloat(pkg.min_total_price).toFixed(2)}</p>          
+          <p className="text-primary text-xl mb-4">{formattedPkg}</p>
         </div>
       <div className="flex justify-center">
         <button 
