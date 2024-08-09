@@ -67,7 +67,7 @@ const BookingConfirmationPage = () => {
                 <p className="mb-4">Email: {booking.email}</p>
                 <p className=''>Checkin Date: {booking.checkInDate}</p>
                 <p className=''>Checkout Date: {booking.checkOutDate}</p>
-                <div className='flex justify-end mr-32 nb-4'>
+                <div className='flex justify-end mr-32 mb-8'>
                 <button onClick={() => handleClick(index)} className='bg-red-500 text-white hover:bg-red-300 px-6 py-3 rounded-lg shadow-md transition duration-300'>Delete</button>
                 </div>
               </div>

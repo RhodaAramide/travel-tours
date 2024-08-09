@@ -17,7 +17,7 @@ const Header = () => {
     
   
   return (
-    <header className="bg-cover bg-center text-white text-center py-16" style={{ backgroundImage: `url(${backgroundImage})` }} >
+    <header className="bg-cover bg-center text-white text-center pt-16" style={{ backgroundImage: `url(${backgroundImage})` }} >
       <div>
       <h1 className="text-4xl font-bold mb-4">
         Welcome to EaseExplore
@@ -44,12 +44,12 @@ const Header = () => {
       <div className="flex justify-center">
         <button 
           onClick={handleGetStartedClick} //Calls the onClick function
-          className="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary transition duration-300"
+          className="bg-primary text-white px-6 mb-8 py-3 rounded-lg shadow-md hover:bg-primary transition duration-300"
         >
           Get Started
         </button>
         </div>
-       
+        <div className="h-3 bg-white w-3/4 mt-16 mx-auto"></div>
       </div>
     </header>
   );

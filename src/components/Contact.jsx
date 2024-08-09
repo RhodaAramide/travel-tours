@@ -50,7 +50,7 @@ const Contact = ({contactSection}) => {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full p-2 rounded-lg border-2 border-secondary focus:outline-none"
+          className="w-full h-40 p-2 rounded-lg border-2 border-secondary focus:outline-none"
         />
         <div className="flex justify-center">
         <button type="submit" onClick={handleSubmit} className="bg-green-50 text-primary font-bold px-6 py-3 rounded-lg shadow-md hover:bg-accent transition duration-300">Submit</button>

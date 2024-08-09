@@ -9,10 +9,13 @@ const PackageList = () => {
   const [price, setPrice] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
 
   useEffect(() => {
-    fetchData();
+    fetchData();    
   }, []);
+
+ 
 
   const fetchData = async () => {
     try {
@@ -62,7 +65,7 @@ const PackageList = () => {
     return <div>{error}</div>;
   }
 
- 
+  
   //This handles location change when the location input is being updated
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
@@ -73,6 +76,7 @@ const PackageList = () => {
     setPrice(event.target.value);
     filterData(location, event.target.value);
   };
+
   //This handles the search and filter logic when search button is clicked
   const handleSearch = () => {
     filterData(location, price);

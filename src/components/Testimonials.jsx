@@ -11,8 +11,8 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="container mx-auto h-46 p-6 rounded-lg shadow-lg mb-16">
-      <h2 className="text-2xl font-bold text-primary mb-4">What Our Clients Say</h2>
+    <div className="container mx-auto h-46 p-16 rounded-lg shadow-lg mb-16">
+      <h2 className="text-2xl font-bold text-primary mb-8">What Our Clients Say</h2>
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* This maps through the testimonials to extract the necessary details needed */}
         {testimonials.map((testimony, index) => (

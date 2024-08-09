@@ -216,11 +216,11 @@ export const Packages = async () => {
 1. After booking a package, you will be redirected to the booking confirmation page.
 2. The booking confirmation page will display the details of the booked travel package.
 
-### Marking Favorite Packages(In Progress)
+### Marking Favorite Packages
 
-1. On the package details page, click the "Add to Favorites" button.
+1. On the package page, click the heart icon to add and remove from favorites.
 2. The package will be saved to your favorites using LocalStorage.
-3. You can view your favorite packages in the "Favorites" section of the website.
+
 
 ### Viewing Testimonials
 
