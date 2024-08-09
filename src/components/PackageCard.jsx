@@ -41,9 +41,9 @@ const PackageCard = ({ pkg }) => {
     <div className="bg-white mx-auto my-4 h-full shadow-lg rounded-lg overflow-hidden"> 
       <img src={pkg.max_photo_url} alt={pkg.hotel_name} className="w-full h-64 object-cover" />
       <div className="h-full p-4">
-        <h3 className="text-lg font-bold">{pkg.hotel_name}</h3>
-        <p className="text-gray-700">{pkg.address}</p>
-        <p className="text-primary font-semibold mt-2 flex gap-2">{pkg.country_trans}
+        <h3 className="text-xl text-primary pb-1 font-bold">{pkg.hotel_name}</h3>
+        <p className="text-text pb-1 font-medium">{pkg.address}</p>
+        <p className="text-primary font-semibold flex gap-2">{pkg.country_trans}
           <span>#{parseFloat(pkg.min_total_price).toFixed(2)}</span>
           </p>
         <div className="text-teal-600 font-semibold mt-2 flex gap-2">
@@ -63,7 +63,7 @@ const PackageCard = ({ pkg }) => {
          * @param {{string}} pkg.hotel_id - The ID of the hotel package.
          * @returns A link element to view details of the package.
          */ }
-        <Link to={`/packages/${pkg.hotel_id}`} className="text-blue-500 hover:underline mt-2 block">
+        <Link to={`/packages/${pkg.hotel_id}`} className="text-blue-500 font-semibold hover:underline my-2 block">
           View Details
         </Link>
       </div>      
