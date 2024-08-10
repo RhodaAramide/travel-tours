@@ -94,7 +94,8 @@ const PackageList = () => {
   return (
     <>
     <div className='flex justify-center my-8'>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>        
+      <div className='grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3'>
+      <div className=''>        
         <input 
         type="text" 
         placeholder='Location' 
@@ -112,6 +113,7 @@ const PackageList = () => {
       <button onClick={handleSearch} className="bg-primary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-backround transition duration-300">
         Search
       </button>
+      </div>
       </div>
       <div className='mx-8'> 
         {filteredData.length > 0 ? 
