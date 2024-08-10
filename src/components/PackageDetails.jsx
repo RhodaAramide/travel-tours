@@ -66,10 +66,10 @@ const PackageDetails = () => {
         <img src={pkg.max_photo_url} alt={pkg.hotel_name} className="w-full h-64 object-cover" />
         <div className="p-4">
           <h2 className="text-primary text-3xl font-bold mb-4">{pkg.hotel_name}</h2>
-          <p className="text-text mb-4">{pkg.address}</p>
-          <p className="text-primary font-semibold mt-2 flex gap-2">{pkg.country_trans}</p>
-          <p className="text-primary text-xl mb-4">#{parseFloat(pkg.min_total_price).toFixed(2)}</p>          
-          <p className="text-primary text-xl mb-4">{formattedPkg}</p>
+          <p className="text-text text-xl font-semibold">{pkg.address}</p>
+          <p className="text-primary text-xl font-semibold mt-2 mb-4 flex gap-2">{pkg.country_trans}</p>
+          <p className="text-primary text-xl font-medium mb-4">#{parseFloat(pkg.min_total_price).toFixed(2)}</p>          
+          <p className="text-primary text-xl font-medium mb-4">{formattedPkg}</p>
         </div>
       <div className="flex justify-center">
         <button 

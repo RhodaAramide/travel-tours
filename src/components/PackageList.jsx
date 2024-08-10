@@ -46,7 +46,7 @@ const PackageList = () => {
         const result = response.data.result;
         const packagesArray = Array.isArray(result) ? result : [result.data]; //Changes the data into an array
         setData(packagesArray);
-        setFilteredData(packagesArray);       
+        // setFilteredData(packagesArray);       
         
       })      
     } catch (error) { //This checks for errors
@@ -90,46 +90,52 @@ const PackageList = () => {
     });
     setFilteredData(filtered);      
   };
-  
+ 
   return (
     <>
     <div className='flex justify-center my-8'>
-      <div>        
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>        
         <input 
         type="text" 
         placeholder='Location' 
         value={location} 
         onChange={handleLocationChange} 
-        className="text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none" />
+        className="text-text p-3 rounded-l-lg border-2 border-primary focus:outline-none" />
       </div>
       <div>        
         <input 
         type="text" 
         placeholder='Minimum Price' 
         value={price} onChange={handlePriceChange} 
-        className="text-text p-2 rounded-l-lg border-2 border-primary focus:outline-none"/>
+        className="text-text p-3 rounded-l-lg border-2 border-primary focus:outline-none"/>
       </div>
       <button onClick={handleSearch} className="bg-primary text-white px-6 py-3 rounded-r-lg shadow-md hover:bg-backround transition duration-300">
         Search
       </button>
       </div>
-      <div className="mx-8 py-8">
-        <h2 className="text-3xl text-primary font-bold mb-4">Travel Packages</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className='mx-8'> 
         {filteredData.length > 0 ? 
-          <div>{filteredData.map((item, index) => (
-            <PackageCard key={index} pkg={item} />           
-          ))}
-          </div> : 
-          <div>
+        <div>             
+            <p className='mb-2 text-center'>Your Search Appears Now.</p>    
+            <h2 className="text-3xl text-primary font-bold ml-4 mb-4">Your Search List</h2>          
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+              {filteredData.map((item, index) => (
+              <PackageCard key={index} pkg={item} />           
+            ))}
+            </div>
+         </div> : 
+         <div>
+          <p className='mb-2 text-center'>No Search found.</p>    
+          <h2 className="text-3xl text-primary font-bold ml-4 mb-4"> All Travel Packages</h2> 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
             {/* <p>No Search found.</p>   */}
             {data.map((item, index) => (
             <PackageCard key={index} pkg={item} />           
           )) }
           </div>
-          }
         </div>
-      </div>
+          }
+      </div>      
     </>
   );
 };

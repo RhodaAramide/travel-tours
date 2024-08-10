@@ -10,9 +10,9 @@ const Destinations = ({ packages }) => {
     navigate('/packages'); // Navigate to PackagePage
   };
   return (
-    <div className="container mx-auto">
-        <div className="flex justify-between mb-4 mt-4">
-            <h2 className="text-3xl text-primary font-bold mb-4">Explore Top Destinations</h2>
+    <div className="container mx-auto my-8">
+        <div className="flex justify-between mb-8 mx-4">
+            <h2 className="text-3xl text-primary font-bold ">Explore Top Destinations</h2>
             <button 
                 onClick={handleClick} 
                 className="bg-primary mr-8 text-white px-6 py-3 rounded-lg shadow-md hover:bg-background transition duration-300"
@@ -20,7 +20,9 @@ const Destinations = ({ packages }) => {
                 View All
             </button>
         </div>
-       <FeaturedPackages packages={packages}/>
+        <div className=''>
+          <FeaturedPackages packages={packages}/>
+       </div>
   </div>
   )
 }

@@ -6,7 +6,7 @@ import facebookIcon from '../assets/images/FacebookIcon.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white p-4 text-center ">      
+    <footer className="bg-primary text-white mt-8 p-4 text-center ">      
       <div className="w-full mt-8">
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-8'>
           <div>
@@ -45,7 +45,7 @@ const Footer = () => {
             </div>            
           </div>
           </div>
-          <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+          <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
         <div className='flex justify-between gap-2 p-4 text-text font-bold'> 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 border-rounded'>
             <img src={twitterIcon} className='' />

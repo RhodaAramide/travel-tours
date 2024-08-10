@@ -38,7 +38,7 @@ const PackageCard = ({ pkg }) => {
 
   
   return (
-    <div className="bg-white mx-auto my-4 h-full shadow-lg rounded-lg overflow-hidden"> 
+    <div className="bg-white mx-4 h-full shadow-lg rounded-lg overflow-hidden"> 
       <img src={pkg.max_photo_url} alt={pkg.hotel_name} className="w-full h-64 object-cover" />
       <div className="h-full p-4">
         <h3 className="text-xl text-primary pb-1 font-bold">{pkg.hotel_name}</h3>

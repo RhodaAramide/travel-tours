@@ -37,14 +37,28 @@ const FeaturedPackages = () => {
       }
 
   return (
-    <div className="mx-4 mb-16 h-max">       
-     
+    <div className="mx-4 mb-16">      
         {packages.length > 0 && (
-        <div className="mt-2 mb-8 h-full">
+        <div className="mt-2 mb-8">
           {/* /**
            * Renders a Swiper container with specified settings and breakpoints.
            */ }
-          <swiper-container className="" space-between="" slides-per-view="3" pagination="true" navigation="true" breakpoints={
+          <swiper-container style={
+                {
+                "--swiper-navigation-color": "#0C5E70",
+                "--swiper-pagination-color": "#0C5E70",
+                "--swiper-pagination-bullet-size": "10px",
+                }
+            } 
+            autoplay-delay="2000"
+            autoplay-disable-on-interaction="false"
+            autoplay="true" 
+            slides-per-view="3" 
+            pagination="true" 
+            pagination-clickable="true"
+            pagination-dynamic-bullets="true"
+            navigation="true" 
+            breakpoints={
             JSON.stringify({                
                 50:{
                     slidesPerView: 1,
